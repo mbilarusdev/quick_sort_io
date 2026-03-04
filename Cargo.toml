@@ -1,0 +1,17 @@
+[package]
+name = "quick_sort"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "staticlib"]
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"
+opt-level = 3
+
+[dependencies]
+flutter_rust_bridge = "2.11.1" 
+rayon = "1.10"
