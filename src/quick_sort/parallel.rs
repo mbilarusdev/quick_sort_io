@@ -1,7 +1,7 @@
 use std::cmp::Ordering;
 
 use super::core::partition;
-use super::simple;
+use super::sort;
 
 pub fn quick_sort<T, F>(arr: &mut [T], compare: F)
 where
@@ -12,7 +12,7 @@ where
         return;
     }
     if arr.len() < 512 {
-        simple::quick_sort(arr, compare);
+        sort::quick_sort(arr, compare);
         return;
     }
 
